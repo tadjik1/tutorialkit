@@ -22,13 +22,13 @@ interface Props {
   hideRoot?: boolean;
   fileTreeScope?: string;
   showFileTree?: boolean;
-  helpAction?: 'solve' | 'reset';
   editorDocument?: EditorDocument;
   selectedFile?: string | undefined;
   allowEditPatterns?: ComponentProps<typeof FileTree>['allowEditPatterns'];
   onEditorChange?: OnEditorChange;
   onEditorScroll?: OnEditorScroll;
-  onHelpClick?: () => void;
+  onRunTestsClick?: () => void;
+  onSubmitClick?: () => void;
   onFileSelect?: (value?: string) => void;
   onFileTreeChange?: ComponentProps<typeof FileTree>['onFileChange'];
 }
@@ -41,13 +41,13 @@ export function EditorPanel({
   hideRoot,
   fileTreeScope,
   showFileTree = true,
-  helpAction,
   editorDocument,
   selectedFile,
   allowEditPatterns,
+  onRunTestsClick,
+  onSubmitClick,
   onEditorChange,
   onEditorScroll,
-  onHelpClick,
   onFileSelect,
   onFileTreeChange,
 }: Props) {
@@ -96,7 +96,12 @@ export function EditorPanel({
         hitAreaMargins={{ fine: 8, coarse: 8 }}
       />
       <Panel className="flex flex-col" defaultSize={100} minSize={10}>
-        <FileTab i18n={i18n} editorDocument={editorDocument} onHelpClick={onHelpClick} helpAction={helpAction} />
+        <FileTab
+          i18n={i18n}
+          editorDocument={editorDocument}
+          onRunTestsClick={onRunTestsClick}
+          onSubmitClick={onSubmitClick}
+        />
         <div className="h-full flex-1 overflow-hidden">
           <CodeMirrorEditor
             className="h-full"
@@ -116,11 +121,11 @@ export function EditorPanel({
 interface FileTabProps {
   i18n: I18n;
   editorDocument: EditorDocument | undefined;
-  helpAction?: 'reset' | 'solve';
-  onHelpClick?: () => void;
+  onRunTestsClick?: () => void;
+  onSubmitClick?: () => void;
 }
 
-function FileTab({ i18n, editorDocument, helpAction, onHelpClick }: FileTabProps) {
+function FileTab({ i18n, editorDocument, onRunTestsClick, onSubmitClick }: FileTabProps) {
   const filePath = editorDocument?.filePath;
   const fileName = filePath?.split('/').at(-1) ?? '';
   const icon = fileName ? getFileIcon(fileName) : '';
@@ -131,14 +136,16 @@ function FileTab({ i18n, editorDocument, helpAction, onHelpClick }: FileTabProps
         <div className={`panel-icon scale-125 ${icon}`}></div>
         <span className="text-sm">{fileName}</span>
       </div>
-      {!!helpAction && (
-        <button onClick={onHelpClick} disabled={!onHelpClick} className="panel-button px-2 py-0.5 -mr-1 -my-1">
-          {helpAction === 'solve' && <div className="i-ph-lightbulb-duotone text-lg" />}
-          {helpAction === 'solve' && i18n.solveButtonText}
-          {helpAction === 'reset' && <div className="i-ph-clock-counter-clockwise-duotone" />}
-          {helpAction === 'reset' && i18n.resetButtonText}
+      <div className="flex">
+        <button onClick={onRunTestsClick} className="panel-button px-2 py-0.5 -mr-1 -my-1">
+          <div className="i-ph-play-circle-duotone text-lg" />
+          Run tests
         </button>
-      )}
+        <button onClick={onSubmitClick} disabled={false} className="panel-button px-2 py-0.5 -mr-1 -my-1">
+          <div className="i-ph-box-arrow-up-duotone text-lg" />
+          Submit
+        </button>
+      </div>
     </div>
   );
 }

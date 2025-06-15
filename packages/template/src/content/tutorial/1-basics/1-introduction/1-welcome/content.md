@@ -1,22 +1,6 @@
 ---
 type: lesson
 title: Welcome to TutorialKit
-focus: /src/index.js
-previews: [8080]
-mainCommand: ['node -e setTimeout(()=>{},10_000)', 'Running dev server']
-prepareCommands:
-  - ['', 'This command will be skipped']
-  - ['node --version', 'Print Node.js version']
-  - ['node -e setTimeout(()=>{},5000)', 'Installing dependencies']
-  - ['node -e setTimeout(()=>{process.exit(1)},5000)', 'This is going to fail']
-terminal:
-  panels: ['terminal', 'output']
-meta: 
-  description: "This is lesson 1"
-  image: "/logo.svg"
-custom:
-  publishedAt: "2024-10-16"
-  
 ---
 
 # Kitchen Sink [Heading 1]

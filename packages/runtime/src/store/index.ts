@@ -419,4 +419,8 @@ export class TutorialStore {
   takeSnapshot() {
     return this._runner.takeSnapshot();
   }
+
+  async runTests() {
+    return this._runner.runTests();
+  }
 }

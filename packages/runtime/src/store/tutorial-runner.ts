@@ -438,6 +438,31 @@ export class TutorialRunner {
     return { files };
   }
 
+  async runTests() {
+    const task = newTask<{ exitCode: number; output: string }>(
+      async (signal) => {
+        const webcontainer = await this._webcontainer;
+
+        signal.throwIfAborted();
+
+        const process = await webcontainer.spawn('npm', ['test']);
+        const output: string[] = [];
+        process.output.pipeTo(
+          new WritableStream({
+            write(data) {
+              output.push(data);
+            },
+          }),
+        );
+        const exitCode = await process.exit;
+        return { exitCode, output: output.join() };
+      },
+      { ignoreCancel: true },
+    );
+
+    return task.promise;
+  }
+
   private async _runCommands(webcontainer: WebContainer, commands: Commands, signal: AbortSignal) {
     const output = this._terminalStore.getOutputPanel();
 

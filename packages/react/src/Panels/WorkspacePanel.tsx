@@ -98,7 +98,6 @@ export function WorkspacePanel({ tutorialStore, theme, dialog }: Props) {
 }
 
 function EditorSection({ theme, tutorialStore, hasEditor }: PanelProps) {
-  const [helpAction, setHelpAction] = useState<'solve' | 'reset'>('reset');
   const selectedFile = useStore(tutorialStore.selectedFile);
   const currentDocument = useStore(tutorialStore.currentDocument);
   const lessonFullyLoaded = useStore(tutorialStore.lessonFullyLoaded);
@@ -107,24 +106,6 @@ function EditorSection({ theme, tutorialStore, hasEditor }: PanelProps) {
   const files = useStore(tutorialStore.files);
 
   const lesson = tutorialStore.lesson!;
-
-  function onHelpClick() {
-    if (tutorialStore.hasSolution()) {
-      setHelpAction((action) => {
-        if (action === 'reset') {
-          tutorialStore.reset();
-
-          return 'solve';
-        } else {
-          tutorialStore.solve();
-
-          return 'reset';
-        }
-      });
-    } else {
-      tutorialStore.reset();
-    }
-  }
 
   async function onFileTreeChange({ method, type, value }: FileTreeChangeEvent) {
     if (method === 'add' && type === 'file') {
@@ -136,13 +117,15 @@ function EditorSection({ theme, tutorialStore, hasEditor }: PanelProps) {
     }
   }
 
-  useEffect(() => {
-    if (tutorialStore.hasSolution()) {
-      setHelpAction('solve');
-    } else {
-      setHelpAction('reset');
-    }
-  }, [storeRef]);
+  async function onRunTestsClick() {
+    console.log('run tests');
+    const result = await tutorialStore.runTests();
+    console.log(result);
+  }
+
+  async function onSubmitClick() {
+    console.log('submit');
+  }
 
   return (
     <Panel
@@ -161,8 +144,8 @@ function EditorSection({ theme, tutorialStore, hasEditor }: PanelProps) {
         files={files}
         i18n={lesson.data.i18n as I18n}
         hideRoot={lesson.data.hideRoot}
-        helpAction={helpAction}
-        onHelpClick={lessonFullyLoaded ? onHelpClick : undefined}
+        onSubmitClick={onSubmitClick}
+        onRunTestsClick={onRunTestsClick}
         onFileSelect={(filePath) => tutorialStore.setSelectedFile(filePath)}
         onFileTreeChange={onFileTreeChange}
         allowEditPatterns={editorConfig.fileTree.allowEdits || undefined}
