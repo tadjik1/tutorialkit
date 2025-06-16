@@ -463,6 +463,18 @@ export class TutorialRunner {
     return task.promise;
   }
 
+  async submitSolution(course: string, lesson: string) {
+    const response = await fetch('/tutorial/submit', {
+      method: 'POST',
+      body: JSON.stringify({
+        course,
+        lesson,
+      }),
+    });
+
+    return response.ok;
+  }
+
   private async _runCommands(webcontainer: WebContainer, commands: Commands, signal: AbortSignal) {
     const output = this._terminalStore.getOutputPanel();
 

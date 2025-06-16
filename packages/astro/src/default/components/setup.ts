@@ -2,16 +2,28 @@
  * This code must be executed before WebContainer boots and be executed as soon as possible.
  * This ensures that when the authentication flow is complete in a popup, the popup is closed quickly.
  */
-import { auth } from '@webcontainer/api';
 import { authStore } from '../stores/auth-store.js';
 
-const authConfig = __WC_CONFIG__;
+const devUser = {
+  displayName: 'John Doe',
+  profileName: 'john-doe',
+  photo: 'https://avatars0.githubusercontent.com/u/1452895?v=4',
+};
 
-export const useAuth = !!authConfig;
+export async function checkUserAuth() {
+  try {
+    if (import.meta.env.PROD) {
+      const res = await fetch('/profile/me', {
+        credentials: 'include',
+      });
+      if (!res.ok) throw new Error('unauthorized');
 
-if (authConfig && !import.meta.env.SSR) {
-  authStore.set(auth.init(authConfig));
-
-  auth.on('auth-failed', (reason) => authStore.set({ status: 'auth-failed', ...reason }));
-  auth.on('logged-out', () => authStore.set({ status: 'need-auth' }));
+      const profile = await res.json();
+      authStore.set({ user: profile });
+    } else {
+      authStore.set({ user: devUser });
+    }
+  } catch {
+    window.location.href = '/auth/login';
+  }
 }

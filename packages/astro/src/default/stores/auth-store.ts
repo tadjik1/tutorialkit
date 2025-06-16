@@ -1,6 +1,11 @@
-import type { AuthAPI } from '@webcontainer/api';
 import { atom } from 'nanostores';
 
-type AuthStore = ReturnType<AuthAPI['init']> | { status: 'no-auth' };
+interface User {
+  displayName: string;
+  profileName: string;
+  photo: string;
+}
 
-export const authStore = atom<AuthStore>({ status: 'no-auth' });
+type AuthStore = { user?: User };
+
+export const authStore = atom<AuthStore>({});

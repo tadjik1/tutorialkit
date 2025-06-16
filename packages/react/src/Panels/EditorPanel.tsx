@@ -137,11 +137,11 @@ function FileTab({ i18n, editorDocument, onRunTestsClick, onSubmitClick }: FileT
         <span className="text-sm">{fileName}</span>
       </div>
       <div className="flex">
-        <button onClick={onRunTestsClick} className="panel-button px-2 py-0.5 -mr-1 -my-1">
+        <button onClick={onRunTestsClick} className="panel-button px-2 py-0.5 mr-1 -my-1">
           <div className="i-ph-play-circle-duotone text-lg" />
-          Run tests
+          Check solution
         </button>
-        <button onClick={onSubmitClick} disabled={false} className="panel-button px-2 py-0.5 -mr-1 -my-1">
+        <button onClick={onSubmitClick} disabled={false} className="panel-button px-2 py-0.5 -my-1">
           <div className="i-ph-box-arrow-up-duotone text-lg" />
           Submit
         </button>

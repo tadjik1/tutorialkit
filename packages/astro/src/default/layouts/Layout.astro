@@ -10,7 +10,7 @@ interface Props {
   meta?: MetaTagsConfig;
 }
 const { title, meta } = Astro.props;
-const faviconUrl = readPublicAsset('favicon.svg');
+const faviconUrl = readPublicAsset('favicon.png');
 const canonicalUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : null;
 ---
 
@@ -22,7 +22,7 @@ const canonicalUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site).toStri
 
       <Fragment slot="links">
         {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
-        {faviconUrl ? <link rel="icon" type="image/svg+xml" href={faviconUrl} /> : null}
+        {faviconUrl ? <link rel="icon" type="image/png" href={faviconUrl} /> : null}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link

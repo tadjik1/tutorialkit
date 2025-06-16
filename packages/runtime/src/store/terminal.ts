@@ -1,5 +1,5 @@
 import type { TerminalSchema } from '@tutorialkit/types';
-import { WebContainer, auth } from '@webcontainer/api';
+import { WebContainer } from '@webcontainer/api';
 import { atom } from 'nanostores';
 import { tick } from '../utils/promises.js';
 import { isWebContainerSupported } from '../utils/support.js';
@@ -13,10 +13,7 @@ export class TerminalStore {
   private _output: ITerminal | undefined = undefined;
   private _webcontainerLoaded = false;
 
-  constructor(
-    private _webcontainer: Promise<WebContainer>,
-    private _useAuth: boolean,
-  ) {
+  constructor(private _webcontainer: Promise<WebContainer>) {
     this._webcontainer.then(() => {
       this._webcontainerLoaded = true;
     });
@@ -101,11 +98,8 @@ export class TerminalStore {
 
     const isLoaded = this._webcontainerLoaded;
 
-    if (this._useAuth && !isLoaded) {
+    if (!isLoaded) {
       terminal.write('Waiting for authentication to complete...');
-
-      await auth.loggedIn();
-
       clearTerminal(terminal);
     }
 

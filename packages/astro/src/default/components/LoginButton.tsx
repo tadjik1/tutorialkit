@@ -4,12 +4,8 @@ import { authStore } from '../stores/auth-store';
 
 export function LoginButton() {
   const authStatus = useStore(authStore);
-  console.log(authStatus);
-  const user = authStatus.user || {
-    name: 'Sergey Zelenov',
-    profileName: 'sergey-zelenov',
-    avatarUrl: 'https://i.imgur.com/moPlf7bm.jpg',
-  };
+  const user = authStatus.user;
+
   const MENU_ITEMS = [
     { label: 'Public profile', value: 'public-profile' },
     { label: 'Account', value: 'account' },
@@ -17,11 +13,11 @@ export function LoginButton() {
   ];
 
   const [open, setOpen] = useState(false);
-  const menuRef = useRef(null);
+  const menuRef = useRef<null | HTMLDivElement>(null);
 
   useEffect(() => {
-    function handleClick(e) {
-      if (menuRef.current && !menuRef.current.contains(e.target)) {
+    function handleClick(e: MouseEvent) {
+      if (!menuRef.current?.contains(e.target)) {
         setOpen(false);
       }
     }
@@ -29,14 +25,16 @@ export function LoginButton() {
     return () => document.removeEventListener('mousedown', handleClick);
   }, [open]);
 
-  function onMenuItemClick(item) {
+  function login() {}
+
+  function onMenuItemClick(item: { value: string }) {
     setOpen(false);
     switch (item.value) {
       case 'public-profile':
-        window.location.href = `https://javascript.info/profile/${user.profileName}`;
+        window.location.href = `https://javascript.info/profile/${user?.profileName}`;
         break;
       case 'account':
-        window.location.href = `https://javascript.info/profile/${user.profileName}/account`;
+        window.location.href = `https://javascript.info/profile/${user?.profileName}/account`;
         break;
       case 'logout':
         // Add your logout logic here
@@ -49,18 +47,25 @@ export function LoginButton() {
 
   return (
     <div className="relative" ref={menuRef}>
-      <button
-        className="flex items-center mr-4 gap-2 px-2 py-1 rounded hover:bg-gray-700 transition"
-        onClick={() => setOpen((v) => !v)}
-      >
-        <img
-          src={user.avatarUrl}
-          alt={user.name}
-          className="w-8 h-8 rounded-full object-cover border-2 border-gray-700"
-        />
-        <span className="text-base text-[#696e79] font-medium">{user.name}</span>
-        <div className={open ? 'i-ph-caret-up-duotone' : 'i-ph-caret-down-duotone'} />
-      </button>
+      {!user && (
+        <button className="flex items-center mr-4 gap-2 px-2 py-1 rounded hover:bg-gray-700 transition" onClick={login}>
+          <span className="text-base text-[#696e79] font-medium">Login</span>
+        </button>
+      )}
+      {!!user && (
+        <button
+          className="flex items-center mr-4 gap-2 px-2 py-1 rounded hover:bg-gray-700 transition"
+          onClick={() => setOpen((v) => !v)}
+        >
+          <img
+            src={user.photo}
+            alt={user.displayName}
+            className="w-8 h-8 rounded-full object-cover border-2 border-gray-700"
+          />
+          <span className="text-base text-[#696e79] font-medium">{user.displayName}</span>
+          <div className={open ? 'i-ph-caret-up-duotone' : 'i-ph-caret-down-duotone'} />
+        </button>
+      )}
       {open && (
         <div className="absolute left-0 mt-2 min-w-[200px] bg-gray-800 rounded-xl shadow-lg py-2 z-50 border border-gray-700">
           {MENU_ITEMS.map((item) => (
