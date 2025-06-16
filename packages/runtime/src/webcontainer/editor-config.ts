@@ -1,4 +1,4 @@
-import type { EditorSchema } from '@tutorialkit/types';
+import type { EditorSchema } from '@szelenov/tutorialkit-types';
 
 interface NormalizedEditorConfig {
   /** Visibility of editor */

@@ -1,5 +1,5 @@
 import { checkUserAuth } from './setup.js';
-import { safeBoot, TutorialStore } from '@tutorialkit/runtime';
+import { safeBoot, TutorialStore } from '@szelenov/tutorialkit-runtime';
 import { WebContainer } from '@webcontainer/api';
 import { joinPaths } from '../utils/url.js';
 

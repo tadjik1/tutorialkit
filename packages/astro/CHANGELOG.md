@@ -1,4 +1,4 @@
-# [1.5.0](https://github.com/stackblitz/tutorialkit/compare/1.4.0...1.5.0) "@tutorialkit/astro" (2025-04-16)
+# [1.5.0](https://github.com/stackblitz/tutorialkit/compare/1.4.0...1.5.0) "@szelenov/tutorialkit-astro" (2025-04-16)
 
 
 ### Features
@@ -8,7 +8,7 @@
 
 
 
-# [1.4.0](https://github.com/stackblitz/tutorialkit/compare/1.3.1...1.4.0) "@tutorialkit/astro" (2025-03-31)
+# [1.4.0](https://github.com/stackblitz/tutorialkit/compare/1.3.1...1.4.0) "@szelenov/tutorialkit-astro" (2025-03-31)
 
 
 ### Features
@@ -17,7 +17,7 @@
 
 
 
-## [1.3.1](https://github.com/stackblitz/tutorialkit/compare/1.3.0...1.3.1) "@tutorialkit/astro" (2024-11-25)
+## [1.3.1](https://github.com/stackblitz/tutorialkit/compare/1.3.0...1.3.1) "@szelenov/tutorialkit-astro" (2024-11-25)
 
 
 ### Bug Fixes
@@ -28,7 +28,7 @@
 
 
 
-# [1.3.0](https://github.com/stackblitz/tutorialkit/compare/1.2.2...1.3.0) "@tutorialkit/astro" (2024-11-15)
+# [1.3.0](https://github.com/stackblitz/tutorialkit/compare/1.2.2...1.3.0) "@szelenov/tutorialkit-astro" (2024-11-15)
 
 
 ### Features
@@ -38,7 +38,7 @@
 
 
 
-## [1.2.2](https://github.com/stackblitz/tutorialkit/compare/1.2.1...1.2.2) "@tutorialkit/astro" (2024-11-12)
+## [1.2.2](https://github.com/stackblitz/tutorialkit/compare/1.2.1...1.2.2) "@szelenov/tutorialkit-astro" (2024-11-12)
 
 
 ### Bug Fixes
@@ -47,7 +47,7 @@
 
 
 
-## [1.2.1](https://github.com/stackblitz/tutorialkit/compare/1.2.0...1.2.1) "@tutorialkit/astro" (2024-11-05)
+## [1.2.1](https://github.com/stackblitz/tutorialkit/compare/1.2.0...1.2.1) "@szelenov/tutorialkit-astro" (2024-11-05)
 
 
 ### Bug Fixes
@@ -56,15 +56,15 @@
 
 
 
-# [1.2.0](https://github.com/stackblitz/tutorialkit/compare/1.1.1...1.2.0) "@tutorialkit/astro" (2024-11-05)
+# [1.2.0](https://github.com/stackblitz/tutorialkit/compare/1.1.1...1.2.0) "@szelenov/tutorialkit-astro" (2024-11-05)
 
 
 
-## [1.1.1](https://github.com/stackblitz/tutorialkit/compare/1.1.0...1.1.1) "@tutorialkit/astro" (2024-10-20)
+## [1.1.1](https://github.com/stackblitz/tutorialkit/compare/1.1.0...1.1.1) "@szelenov/tutorialkit-astro" (2024-10-20)
 
 
 
-# [1.1.0](https://github.com/stackblitz/tutorialkit/compare/1.0.0...1.1.0) "@tutorialkit/astro" (2024-10-18)
+# [1.1.0](https://github.com/stackblitz/tutorialkit/compare/1.0.0...1.1.0) "@szelenov/tutorialkit-astro" (2024-10-18)
 
 
 ### Bug Fixes
@@ -79,13 +79,13 @@
 
 
 
-# [1.0.0](https://github.com/stackblitz/tutorialkit/compare/0.2.3...1.0.0) "@tutorialkit/astro" (2024-10-01)
+# [1.0.0](https://github.com/stackblitz/tutorialkit/compare/0.2.3...1.0.0) "@szelenov/tutorialkit-astro" (2024-10-01)
 
 
 ### Bug Fixes
 
 * **astro:** better default meta tags ([#342](https://github.com/stackblitz/tutorialkit/issues/342)) ([d81d1cc](https://github.com/stackblitz/tutorialkit/commit/d81d1cc01fdbce702ae91a6a5f371bd03c38b338))
-* **astro:** published package missing `@tutorialkit/astro/types` ([#347](https://github.com/stackblitz/tutorialkit/issues/347)) ([f49e910](https://github.com/stackblitz/tutorialkit/commit/f49e9107d35b98079a0fb16c74b9f37a45357661))
+* **astro:** published package missing `@szelenov/tutorialkit-astro/types` ([#347](https://github.com/stackblitz/tutorialkit/issues/347)) ([f49e910](https://github.com/stackblitz/tutorialkit/commit/f49e9107d35b98079a0fb16c74b9f37a45357661))
 
 
 ### Features
@@ -97,11 +97,11 @@
 
 
 
-## [0.2.3](https://github.com/stackblitz/tutorialkit/compare/0.2.2...0.2.3) "@tutorialkit/astro" (2024-09-10)
+## [0.2.3](https://github.com/stackblitz/tutorialkit/compare/0.2.2...0.2.3) "@szelenov/tutorialkit-astro" (2024-09-10)
 
 
 
-## [0.2.2](https://github.com/stackblitz/tutorialkit/compare/0.2.1...0.2.2) "@tutorialkit/astro" (2024-09-04)
+## [0.2.2](https://github.com/stackblitz/tutorialkit/compare/0.2.1...0.2.2) "@szelenov/tutorialkit-astro" (2024-09-04)
 
 
 ### Bug Fixes
@@ -115,7 +115,7 @@
 
 
 
-## [0.2.1](https://github.com/stackblitz/tutorialkit/compare/0.2.0...0.2.1) "@tutorialkit/astro" (2024-08-30)
+## [0.2.1](https://github.com/stackblitz/tutorialkit/compare/0.2.0...0.2.1) "@szelenov/tutorialkit-astro" (2024-08-30)
 
 
 ### Bug Fixes
@@ -124,23 +124,23 @@
 
 
 
-# [0.2.0](https://github.com/stackblitz/tutorialkit/compare/0.1.6...0.2.0) "@tutorialkit/astro" (2024-08-28)
+# [0.2.0](https://github.com/stackblitz/tutorialkit/compare/0.1.6...0.2.0) "@szelenov/tutorialkit-astro" (2024-08-28)
 
 
 ### Features
 
-* rename `@tutorialkit/components-react` to `@tutorialkit/react` ([#155](https://github.com/stackblitz/tutorialkit/issues/155)) ([e3c0fee](https://github.com/stackblitz/tutorialkit/commit/e3c0fee902a7bfc312fb01b30531209815d460c3))
+* rename `@szelenov/tutorialkit-components-react` to `@szelenov/tutorialkit-react` ([#155](https://github.com/stackblitz/tutorialkit/issues/155)) ([e3c0fee](https://github.com/stackblitz/tutorialkit/commit/e3c0fee902a7bfc312fb01b30531209815d460c3))
 * simplify UnoCSS integration ([#270](https://github.com/stackblitz/tutorialkit/issues/270)) ([8d49ef8](https://github.com/stackblitz/tutorialkit/commit/8d49ef81272d84cbfa2c1a10742f01540fe3650c))
 
 
 ### BREAKING CHANGES
 
-* rename `@tutorialkit/components-react` to `@tutorialkit/react` (#155)
+* rename `@szelenov/tutorialkit-components-react` to `@szelenov/tutorialkit-react` (#155)
 * simplify UnoCSS integration (#270)
 
 
 
-## [0.1.6](https://github.com/stackblitz/tutorialkit/compare/0.1.5...0.1.6) "@tutorialkit/astro" (2024-08-26)
+## [0.1.6](https://github.com/stackblitz/tutorialkit/compare/0.1.5...0.1.6) "@szelenov/tutorialkit-astro" (2024-08-26)
 
 
 ### Bug Fixes
@@ -150,7 +150,7 @@
 
 
 
-## [0.1.5](https://github.com/stackblitz/tutorialkit/compare/0.1.4...0.1.5) "@tutorialkit/astro" (2024-08-16)
+## [0.1.5](https://github.com/stackblitz/tutorialkit/compare/0.1.4...0.1.5) "@szelenov/tutorialkit-astro" (2024-08-16)
 
 
 ### Bug Fixes
@@ -159,7 +159,7 @@
 
 
 
-## [0.1.4](https://github.com/stackblitz/tutorialkit/compare/0.1.3...0.1.4) "@tutorialkit/astro" (2024-08-08)
+## [0.1.4](https://github.com/stackblitz/tutorialkit/compare/0.1.3...0.1.4) "@szelenov/tutorialkit-astro" (2024-08-08)
 
 
 ### Bug Fixes
@@ -169,7 +169,7 @@
 
 
 
-## [0.1.3](https://github.com/stackblitz/tutorialkit/compare/0.1.2...0.1.3) "@tutorialkit/astro" (2024-08-07)
+## [0.1.3](https://github.com/stackblitz/tutorialkit/compare/0.1.2...0.1.3) "@szelenov/tutorialkit-astro" (2024-08-07)
 
 
 ### Features
@@ -179,7 +179,7 @@
 
 
 
-## [0.1.2](https://github.com/stackblitz/tutorialkit/compare/0.1.1...0.1.2) "@tutorialkit/astro" (2024-08-01)
+## [0.1.2](https://github.com/stackblitz/tutorialkit/compare/0.1.1...0.1.2) "@szelenov/tutorialkit-astro" (2024-08-01)
 
 
 ### Bug Fixes
@@ -188,15 +188,15 @@
 
 
 
-## [0.1.1](https://github.com/stackblitz/tutorialkit/compare/0.1.0...0.1.1) "@tutorialkit/astro" (2024-07-30)
+## [0.1.1](https://github.com/stackblitz/tutorialkit/compare/0.1.0...0.1.1) "@szelenov/tutorialkit-astro" (2024-07-30)
 
 
 
-# [0.1.0](https://github.com/stackblitz/tutorialkit/compare/0.0.3...0.1.0) "@tutorialkit/astro" (2024-07-25)
+# [0.1.0](https://github.com/stackblitz/tutorialkit/compare/0.0.3...0.1.0) "@szelenov/tutorialkit-astro" (2024-07-25)
 
 
 
-## [0.0.3](https://github.com/stackblitz/tutorialkit/compare/0.0.2...0.0.3) "@tutorialkit/astro" (2024-07-23)
+## [0.0.3](https://github.com/stackblitz/tutorialkit/compare/0.0.2...0.0.3) "@szelenov/tutorialkit-astro" (2024-07-23)
 
 
 ### Bug Fixes
@@ -205,11 +205,11 @@
 
 
 
-## [0.0.2](https://github.com/stackblitz/tutorialkit/compare/0.0.1...0.0.2) "@tutorialkit/astro" (2024-07-17)
+## [0.0.2](https://github.com/stackblitz/tutorialkit/compare/0.0.1...0.0.2) "@szelenov/tutorialkit-astro" (2024-07-17)
 
 
 
-## [0.0.1](https://github.com/stackblitz/tutorialkit/compare/0.0.1-alpha.26...0.0.1) "@tutorialkit/astro" (2024-07-17)
+## [0.0.1](https://github.com/stackblitz/tutorialkit/compare/0.0.1-alpha.26...0.0.1) "@szelenov/tutorialkit-astro" (2024-07-17)
 
 
 ### Bug Fixes
@@ -218,7 +218,7 @@
 
 
 
-## [0.0.1-alpha.26](https://github.com/stackblitz/tutorialkit/compare/0.0.1-alpha.25...0.0.1-alpha.26) "@tutorialkit/astro" (2024-07-15)
+## [0.0.1-alpha.26](https://github.com/stackblitz/tutorialkit/compare/0.0.1-alpha.25...0.0.1-alpha.26) "@szelenov/tutorialkit-astro" (2024-07-15)
 
 
 ### Bug Fixes
@@ -233,7 +233,7 @@
 
 
 
-## [0.0.1-alpha.25](https://github.com/stackblitz/tutorialkit/compare/0.0.1-alpha.24...0.0.1-alpha.25) "@tutorialkit/astro" (2024-07-09)
+## [0.0.1-alpha.25](https://github.com/stackblitz/tutorialkit/compare/0.0.1-alpha.24...0.0.1-alpha.25) "@szelenov/tutorialkit-astro" (2024-07-09)
 
 
 ### Features
@@ -243,7 +243,7 @@
 
 
 
-## [0.0.1-alpha.24](https://github.com/stackblitz/tutorialkit/compare/0.0.1-alpha.23...0.0.1-alpha.24) "@tutorialkit/astro" (2024-07-04)
+## [0.0.1-alpha.24](https://github.com/stackblitz/tutorialkit/compare/0.0.1-alpha.23...0.0.1-alpha.24) "@szelenov/tutorialkit-astro" (2024-07-04)
 
 
 ### Bug Fixes
@@ -255,7 +255,7 @@
 
 ### Features
 
-* add `@tutorialkit/theme` package to use the theme without astro ([#105](https://github.com/stackblitz/tutorialkit/issues/105)) ([9805996](https://github.com/stackblitz/tutorialkit/commit/9805996a4211a1c8a3e1bfbbd958a27f1957d4d7))
+* add `@szelenov/tutorialkit-theme` package to use the theme without astro ([#105](https://github.com/stackblitz/tutorialkit/issues/105)) ([9805996](https://github.com/stackblitz/tutorialkit/commit/9805996a4211a1c8a3e1bfbbd958a27f1957d4d7))
 * add eslint ([#90](https://github.com/stackblitz/tutorialkit/issues/90)) ([fcfb3e8](https://github.com/stackblitz/tutorialkit/commit/fcfb3e8109b5be1ef59ac2bfd8efd4db8e635e34))
 * allow custom `src/pages/index.astro` ([#93](https://github.com/stackblitz/tutorialkit/issues/93)) ([d431d4d](https://github.com/stackblitz/tutorialkit/commit/d431d4d4908f28184cd7d2f75faffe2c77a3ef4c))
 * allow ordering to be config based in addition to folder based ([#79](https://github.com/stackblitz/tutorialkit/issues/79)) ([2b131e5](https://github.com/stackblitz/tutorialkit/commit/2b131e597b94671678c2f2e4625e194eb382dab0))
@@ -267,7 +267,7 @@
 
 
 
-## [0.0.1-alpha.23](https://github.com/stackblitz/tutorialkit/compare/0.0.1-alpha.22...0.0.1-alpha.23) "@tutorialkit/astro" (2024-06-19)
+## [0.0.1-alpha.23](https://github.com/stackblitz/tutorialkit/compare/0.0.1-alpha.22...0.0.1-alpha.23) "@szelenov/tutorialkit-astro" (2024-06-19)
 
 
 ### Bug Fixes

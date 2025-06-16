@@ -1,4 +1,4 @@
-# @tutorialkit/types
+# @szelenov/tutorialkit-types
 
 Collection of schemas and type definitions used by a TutorialKit project.
 

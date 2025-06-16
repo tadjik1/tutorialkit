@@ -1,5 +1,5 @@
-import { Nav } from '@tutorialkit/react';
-import type { Lesson, NavList } from '@tutorialkit/types';
+import { Nav } from '@szelenov/tutorialkit-react';
+import type { Lesson, NavList } from '@szelenov/tutorialkit-types';
 
 interface Props {
   lesson: Lesson;

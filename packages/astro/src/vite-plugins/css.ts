@@ -2,7 +2,7 @@
  * A plugin that automatically adds user land CSS if they have any, particularly
  * useful to override the CSS variables of the theme.
  *
- * It exposes a virtual module `@tutorialkit/css` which is imported manually in
+ * It exposes a virtual module `@szelenov/tutorialkit-css` which is imported manually in
  * the correct location to make sure the CSS customization are added after the
  * default values.
  */
@@ -14,13 +14,13 @@ import type { ViteDevServer, VitePlugin } from '../types.js';
 
 const CUSTOM_PATHS = ['theme.css', 'theme/index.css'];
 
-const virtualModuleId = '@tutorialkit/custom.css';
+const virtualModuleId = '@szelenov/tutorialkit-custom.css';
 const resolvedVirtualModuleId = `/${virtualModuleId}`;
 
 let projectRoot = process.cwd();
 
 export const userlandCSS: VitePlugin = {
-  name: '@tutorialkit/custom.css',
+  name: '@szelenov/tutorialkit-custom.css',
   resolveId(id) {
     if (id === virtualModuleId) {
       return resolvedVirtualModuleId;

@@ -57,7 +57,7 @@ describe.each(['npm', 'pnpm', 'yarn'])('%s', (packageManager) => {
       const unoConfig = await fs.readFile(`${dest}/uno.config.ts`, 'utf8');
 
       expect(unoConfig).toBe(`\
-import { defineConfig } from '@tutorialkit/theme';
+import { defineConfig } from '@szelenov/tutorialkit-theme';
 
 export default defineConfig({
   // add your UnoCSS config here: https://unocss.dev/guide/config-file

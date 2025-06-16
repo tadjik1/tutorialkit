@@ -1,6 +1,6 @@
 import { useStore } from '@nanostores/react';
-import type { PreviewInfo, TutorialStore } from '@tutorialkit/runtime';
-import type { I18n } from '@tutorialkit/types';
+import type { PreviewInfo, TutorialStore } from '@szelenov/tutorialkit-runtime';
+import type { I18n } from '@szelenov/tutorialkit-types';
 import { reloadPreview } from '@webcontainer/api/utils';
 import { createElement, forwardRef, memo, useCallback, useEffect, useImperativeHandle, useRef } from 'react';
 import { Panel, PanelGroup, PanelResizeHandle } from 'react-resizable-panels';

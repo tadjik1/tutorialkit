@@ -1,4 +1,4 @@
-import { defineConfig } from '@tutorialkit/theme';
+import { defineConfig } from '@szelenov/tutorialkit-theme';
 
 export default defineConfig({
   // required for TutorialKit monorepo development mode

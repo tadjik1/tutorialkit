@@ -1,6 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { getInlineContentForPackage } from '@tutorialkit/theme';
+import { getInlineContentForPackage } from '@szelenov/tutorialkit-theme';
 import { execa } from 'execa';
 import { temporaryDirectory } from 'tempy';
 import { afterAll, expect, test } from 'vitest';
@@ -13,7 +13,7 @@ afterAll(async () => {
   await fs.rm(tmp, { force: true, recursive: true });
 });
 
-test('getInlineContentForPackage finds files from @tutorialkit/astro', async () => {
+test('getInlineContentForPackage finds files from @szelenov/tutorialkit-astro', async () => {
   await execa(
     'node',
     [cli, 'create', 'theme-test', '--install', '--no-git', '--no-start', '--package-manager', 'pnpm', '--defaults'],
@@ -21,7 +21,7 @@ test('getInlineContentForPackage finds files from @tutorialkit/astro', async () 
   );
 
   const content = getInlineContentForPackage({
-    name: '@tutorialkit/astro',
+    name: '@szelenov/tutorialkit-astro',
     pattern: '/dist/default/**/*.astro',
     root: `${tmp}/theme-test`,
   });

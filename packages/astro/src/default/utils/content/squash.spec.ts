@@ -1,4 +1,4 @@
-import type { Lesson } from '@tutorialkit/types';
+import type { Lesson } from '@szelenov/tutorialkit-types';
 import { describe, it, test, expect } from 'vitest';
 import { squash } from './squash.js';
 

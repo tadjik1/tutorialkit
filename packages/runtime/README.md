@@ -1,4 +1,4 @@
-# @tutorialkit/runtime
+# @szelenov/tutorialkit-runtime
 
 A wrapper around the **[WebContainer API][webcontainer-api]** focused on providing the right abstractions to let you focus on building highly interactive tutorials.
 

@@ -1,15 +1,15 @@
 {
-  "name": "@tutorialkit/theme",
-  "version": "1.5.0",
+  "name": "@szelenov/tutorialkit-theme",
+  "version": "1.0.0",
   "description": "TutorialKit theme configuration",
-  "author": "StackBlitz Inc.",
+  "author": "Sergey Zelenov",
   "type": "module",
-  "bugs": "https://github.com/stackblitz/tutorialkit/issues",
-  "homepage": "https://github.com/stackblitz/tutorialkit",
+  "bugs": "https://github.com/tadjik1/tutorialkit/issues",
+  "homepage": "https://github.com/tadjik1/tutorialkit",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stackblitz/tutorialkit.git",
+    "url": "git+https://github.com/tadjik1/tutorialkit.git",
     "directory": "packages/theme"
   },
   "types": "./dist/index.d.ts",

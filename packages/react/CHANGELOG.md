@@ -1,4 +1,4 @@
-# [1.5.0](https://github.com/stackblitz/tutorialkit/compare/1.4.0...1.5.0) "@tutorialkit/react" (2025-04-16)
+# [1.5.0](https://github.com/stackblitz/tutorialkit/compare/1.4.0...1.5.0) "@szelenov/tutorialkit-react" (2025-04-16)
 
 
 ### Bug Fixes
@@ -7,15 +7,15 @@
 
 
 
-# [1.4.0](https://github.com/stackblitz/tutorialkit/compare/1.3.1...1.4.0) "@tutorialkit/react" (2025-03-31)
+# [1.4.0](https://github.com/stackblitz/tutorialkit/compare/1.3.1...1.4.0) "@szelenov/tutorialkit-react" (2025-03-31)
 
 
 
-## [1.3.1](https://github.com/stackblitz/tutorialkit/compare/1.3.0...1.3.1) "@tutorialkit/react" (2024-11-25)
+## [1.3.1](https://github.com/stackblitz/tutorialkit/compare/1.3.0...1.3.1) "@szelenov/tutorialkit-react" (2024-11-25)
 
 
 
-# [1.3.0](https://github.com/stackblitz/tutorialkit/compare/1.2.2...1.3.0) "@tutorialkit/react" (2024-11-15)
+# [1.3.0](https://github.com/stackblitz/tutorialkit/compare/1.2.2...1.3.0) "@szelenov/tutorialkit-react" (2024-11-15)
 
 
 ### Features
@@ -25,7 +25,7 @@
 
 
 
-## [1.2.2](https://github.com/stackblitz/tutorialkit/compare/1.2.1...1.2.2) "@tutorialkit/react" (2024-11-12)
+## [1.2.2](https://github.com/stackblitz/tutorialkit/compare/1.2.1...1.2.2) "@szelenov/tutorialkit-react" (2024-11-12)
 
 
 ### Bug Fixes
@@ -34,11 +34,11 @@
 
 
 
-## [1.2.1](https://github.com/stackblitz/tutorialkit/compare/1.2.0...1.2.1) "@tutorialkit/react" (2024-11-05)
+## [1.2.1](https://github.com/stackblitz/tutorialkit/compare/1.2.0...1.2.1) "@szelenov/tutorialkit-react" (2024-11-05)
 
 
 
-# [1.2.0](https://github.com/stackblitz/tutorialkit/compare/1.1.1...1.2.0) "@tutorialkit/react" (2024-11-05)
+# [1.2.0](https://github.com/stackblitz/tutorialkit/compare/1.1.1...1.2.0) "@szelenov/tutorialkit-react" (2024-11-05)
 
 
 ### Bug Fixes
@@ -47,11 +47,11 @@
 
 
 
-## [1.1.1](https://github.com/stackblitz/tutorialkit/compare/1.1.0...1.1.1) "@tutorialkit/react" (2024-10-20)
+## [1.1.1](https://github.com/stackblitz/tutorialkit/compare/1.1.0...1.1.1) "@szelenov/tutorialkit-react" (2024-10-20)
 
 
 
-# [1.1.0](https://github.com/stackblitz/tutorialkit/compare/1.0.0...1.1.0) "@tutorialkit/react" (2024-10-18)
+# [1.1.0](https://github.com/stackblitz/tutorialkit/compare/1.0.0...1.1.0) "@szelenov/tutorialkit-react" (2024-10-18)
 
 
 ### Features
@@ -60,7 +60,7 @@
 
 
 
-# [1.0.0](https://github.com/stackblitz/tutorialkit/compare/0.2.3...1.0.0) "@tutorialkit/react" (2024-10-01)
+# [1.0.0](https://github.com/stackblitz/tutorialkit/compare/0.2.3...1.0.0) "@szelenov/tutorialkit-react" (2024-10-01)
 
 
 ### Bug Fixes
@@ -76,7 +76,7 @@
 
 
 
-## [0.2.3](https://github.com/stackblitz/tutorialkit/compare/0.2.2...0.2.3) "@tutorialkit/react" (2024-09-10)
+## [0.2.3](https://github.com/stackblitz/tutorialkit/compare/0.2.2...0.2.3) "@szelenov/tutorialkit-react" (2024-09-10)
 
 
 ### Bug Fixes
@@ -85,7 +85,7 @@
 
 
 
-## [0.2.2](https://github.com/stackblitz/tutorialkit/compare/0.2.1...0.2.2) "@tutorialkit/react" (2024-09-04)
+## [0.2.2](https://github.com/stackblitz/tutorialkit/compare/0.2.1...0.2.2) "@szelenov/tutorialkit-react" (2024-09-04)
 
 
 ### Bug Fixes
@@ -99,25 +99,25 @@
 
 
 
-## [0.2.1](https://github.com/stackblitz/tutorialkit/compare/0.2.0...0.2.1) "@tutorialkit/react" (2024-08-30)
+## [0.2.1](https://github.com/stackblitz/tutorialkit/compare/0.2.0...0.2.1) "@szelenov/tutorialkit-react" (2024-08-30)
 
 
 
-# [0.2.0](https://github.com/stackblitz/tutorialkit/compare/0.1.6...0.2.0) "@tutorialkit/react" (2024-08-28)
+# [0.2.0](https://github.com/stackblitz/tutorialkit/compare/0.1.6...0.2.0) "@szelenov/tutorialkit-react" (2024-08-28)
 
 
 ### Features
 
-* rename `@tutorialkit/components-react` to `@tutorialkit/react` ([#155](https://github.com/stackblitz/tutorialkit/issues/155)) ([e3c0fee](https://github.com/stackblitz/tutorialkit/commit/e3c0fee902a7bfc312fb01b30531209815d460c3))
+* rename `@szelenov/tutorialkit-components-react` to `@szelenov/tutorialkit-react` ([#155](https://github.com/stackblitz/tutorialkit/issues/155)) ([e3c0fee](https://github.com/stackblitz/tutorialkit/commit/e3c0fee902a7bfc312fb01b30531209815d460c3))
 
 
 ### BREAKING CHANGES
 
-* rename `@tutorialkit/components-react` to `@tutorialkit/react` (#155)
+* rename `@szelenov/tutorialkit-components-react` to `@szelenov/tutorialkit-react` (#155)
 
 
 
-## [0.1.6](https://github.com/stackblitz/tutorialkit/compare/0.1.5...0.1.6) "@tutorialkit/components-react" (2024-08-26)
+## [0.1.6](https://github.com/stackblitz/tutorialkit/compare/0.1.5...0.1.6) "@szelenov/tutorialkit-components-react" (2024-08-26)
 
 
 ### Bug Fixes
@@ -135,7 +135,7 @@
 
 
 
-## [0.1.5](https://github.com/stackblitz/tutorialkit/compare/0.1.4...0.1.5) "@tutorialkit/components-react" (2024-08-16)
+## [0.1.5](https://github.com/stackblitz/tutorialkit/compare/0.1.4...0.1.5) "@szelenov/tutorialkit-components-react" (2024-08-16)
 
 
 ### Bug Fixes
@@ -144,11 +144,11 @@
 
 
 
-## [0.1.4](https://github.com/stackblitz/tutorialkit/compare/0.1.3...0.1.4) "@tutorialkit/components-react" (2024-08-08)
+## [0.1.4](https://github.com/stackblitz/tutorialkit/compare/0.1.3...0.1.4) "@szelenov/tutorialkit-components-react" (2024-08-08)
 
 
 
-## [0.1.3](https://github.com/stackblitz/tutorialkit/compare/0.1.2...0.1.3) "@tutorialkit/components-react" (2024-08-07)
+## [0.1.3](https://github.com/stackblitz/tutorialkit/compare/0.1.2...0.1.3) "@szelenov/tutorialkit-components-react" (2024-08-07)
 
 
 ### Features
@@ -157,31 +157,31 @@
 
 
 
-## [0.1.2](https://github.com/stackblitz/tutorialkit/compare/0.1.1...0.1.2) "@tutorialkit/components-react" (2024-08-01)
+## [0.1.2](https://github.com/stackblitz/tutorialkit/compare/0.1.1...0.1.2) "@szelenov/tutorialkit-components-react" (2024-08-01)
 
 
 
-## [0.1.1](https://github.com/stackblitz/tutorialkit/compare/0.1.0...0.1.1) "@tutorialkit/components-react" (2024-07-30)
+## [0.1.1](https://github.com/stackblitz/tutorialkit/compare/0.1.0...0.1.1) "@szelenov/tutorialkit-components-react" (2024-07-30)
 
 
 
-# [0.1.0](https://github.com/stackblitz/tutorialkit/compare/0.0.3...0.1.0) "@tutorialkit/components-react" (2024-07-25)
+# [0.1.0](https://github.com/stackblitz/tutorialkit/compare/0.0.3...0.1.0) "@szelenov/tutorialkit-components-react" (2024-07-25)
 
 
 
-## [0.0.3](https://github.com/stackblitz/tutorialkit/compare/0.0.2...0.0.3) "@tutorialkit/components-react" (2024-07-23)
+## [0.0.3](https://github.com/stackblitz/tutorialkit/compare/0.0.2...0.0.3) "@szelenov/tutorialkit-components-react" (2024-07-23)
 
 
 
-## [0.0.2](https://github.com/stackblitz/tutorialkit/compare/0.0.1...0.0.2) "@tutorialkit/components-react" (2024-07-17)
+## [0.0.2](https://github.com/stackblitz/tutorialkit/compare/0.0.1...0.0.2) "@szelenov/tutorialkit-components-react" (2024-07-17)
 
 
 
-## [0.0.1](https://github.com/stackblitz/tutorialkit/compare/0.0.1-alpha.26...0.0.1) "@tutorialkit/components-react" (2024-07-17)
+## [0.0.1](https://github.com/stackblitz/tutorialkit/compare/0.0.1-alpha.26...0.0.1) "@szelenov/tutorialkit-components-react" (2024-07-17)
 
 
 
-## [0.0.1-alpha.26](https://github.com/stackblitz/tutorialkit/compare/0.0.1-alpha.25...0.0.1-alpha.26) "@tutorialkit/components-react" (2024-07-15)
+## [0.0.1-alpha.26](https://github.com/stackblitz/tutorialkit/compare/0.0.1-alpha.25...0.0.1-alpha.26) "@szelenov/tutorialkit-components-react" (2024-07-15)
 
 
 ### Bug Fixes
@@ -196,11 +196,11 @@
 
 
 
-## [0.0.1-alpha.25](https://github.com/stackblitz/tutorialkit/compare/0.0.1-alpha.24...0.0.1-alpha.25) "@tutorialkit/components-react" (2024-07-09)
+## [0.0.1-alpha.25](https://github.com/stackblitz/tutorialkit/compare/0.0.1-alpha.24...0.0.1-alpha.25) "@szelenov/tutorialkit-components-react" (2024-07-09)
 
 
 
-## [0.0.1-alpha.24](https://github.com/stackblitz/tutorialkit/compare/0.0.1-alpha.23...0.0.1-alpha.24) "@tutorialkit/components-react" (2024-07-04)
+## [0.0.1-alpha.24](https://github.com/stackblitz/tutorialkit/compare/0.0.1-alpha.23...0.0.1-alpha.24) "@szelenov/tutorialkit-components-react" (2024-07-04)
 
 
 ### Bug Fixes
@@ -214,7 +214,7 @@
 
 ### Features
 
-* add `@tutorialkit/theme` package to use the theme without astro ([#105](https://github.com/stackblitz/tutorialkit/issues/105)) ([9805996](https://github.com/stackblitz/tutorialkit/commit/9805996a4211a1c8a3e1bfbbd958a27f1957d4d7))
+* add `@szelenov/tutorialkit-theme` package to use the theme without astro ([#105](https://github.com/stackblitz/tutorialkit/issues/105)) ([9805996](https://github.com/stackblitz/tutorialkit/commit/9805996a4211a1c8a3e1bfbbd958a27f1957d4d7))
 * add eslint ([#90](https://github.com/stackblitz/tutorialkit/issues/90)) ([fcfb3e8](https://github.com/stackblitz/tutorialkit/commit/fcfb3e8109b5be1ef59ac2bfd8efd4db8e635e34))
 * make core react components easily accessible ([#104](https://github.com/stackblitz/tutorialkit/issues/104)) ([d8a5a34](https://github.com/stackblitz/tutorialkit/commit/d8a5a341df6c2d23d1d59ede61b4d3ef689af081))
 * mobile support ([#91](https://github.com/stackblitz/tutorialkit/issues/91)) ([030ca1e](https://github.com/stackblitz/tutorialkit/commit/030ca1ee688f75f6e59ae25a1b2433823ade384f))
@@ -222,7 +222,7 @@
 
 
 
-## [0.0.1-alpha.23](https://github.com/stackblitz/tutorialkit/compare/0.0.1-alpha.22...0.0.1-alpha.23) "@tutorialkit/components-react" (2024-06-19)
+## [0.0.1-alpha.23](https://github.com/stackblitz/tutorialkit/compare/0.0.1-alpha.22...0.0.1-alpha.23) "@szelenov/tutorialkit-components-react" (2024-06-19)
 
 
 ### Bug Fixes

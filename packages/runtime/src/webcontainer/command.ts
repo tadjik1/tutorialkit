@@ -1,4 +1,4 @@
-import type { CommandSchema, CommandsSchema } from '@tutorialkit/types';
+import type { CommandSchema, CommandsSchema } from '@szelenov/tutorialkit-types';
 
 export class Commands implements Iterable<Command> {
   /**

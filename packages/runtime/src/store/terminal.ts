@@ -1,4 +1,4 @@
-import type { TerminalSchema } from '@tutorialkit/types';
+import type { TerminalSchema } from '@szelenov/tutorialkit-types';
 import { WebContainer } from '@webcontainer/api';
 import { atom } from 'nanostores';
 import { tick } from '../utils/promises.js';

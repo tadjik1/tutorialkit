@@ -4,9 +4,9 @@ import { getInlineContentForPackage } from './index.js';
 
 const root = fileURLToPath(new URL('../../template', import.meta.url));
 
-test('getInlineContentForPackage finds files from @tutorialkit/astro', () => {
+test('getInlineContentForPackage finds files from @szelenov/tutorialkit-astro', () => {
   const content = getInlineContentForPackage({
-    name: '@tutorialkit/astro',
+    name: '@szelenov/tutorialkit-astro',
     pattern: '/dist/default/**/*.astro',
     root,
   });

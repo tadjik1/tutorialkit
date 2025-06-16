@@ -8,8 +8,8 @@ import type {
   PartSchema,
   Tutorial,
   TutorialSchema,
-} from '@tutorialkit/types';
-import { interpolateString, DEFAULT_LOCALIZATION } from '@tutorialkit/types';
+} from '@szelenov/tutorialkit-types';
+import { interpolateString, DEFAULT_LOCALIZATION } from '@szelenov/tutorialkit-types';
 import { getCollection } from 'astro:content';
 import { getFilesRefList } from './content/files-ref';
 import { squash } from './content/squash.js';

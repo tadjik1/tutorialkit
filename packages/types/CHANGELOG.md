@@ -1,12 +1,12 @@
-# [1.5.0](https://github.com/stackblitz/tutorialkit/compare/1.4.0...1.5.0) "@tutorialkit/types" (2025-04-16)
+# [1.5.0](https://github.com/stackblitz/tutorialkit/compare/1.4.0...1.5.0) "@szelenov/tutorialkit-types" (2025-04-16)
 
 
 
-# [1.4.0](https://github.com/stackblitz/tutorialkit/compare/1.3.1...1.4.0) "@tutorialkit/types" (2025-03-31)
+# [1.4.0](https://github.com/stackblitz/tutorialkit/compare/1.3.1...1.4.0) "@szelenov/tutorialkit-types" (2025-03-31)
 
 
 
-## [1.3.1](https://github.com/stackblitz/tutorialkit/compare/1.3.0...1.3.1) "@tutorialkit/types" (2024-11-25)
+## [1.3.1](https://github.com/stackblitz/tutorialkit/compare/1.3.0...1.3.1) "@szelenov/tutorialkit-types" (2024-11-25)
 
 
 ### Bug Fixes
@@ -15,7 +15,7 @@
 
 
 
-# [1.3.0](https://github.com/stackblitz/tutorialkit/compare/1.2.2...1.3.0) "@tutorialkit/types" (2024-11-15)
+# [1.3.0](https://github.com/stackblitz/tutorialkit/compare/1.2.2...1.3.0) "@szelenov/tutorialkit-types" (2024-11-15)
 
 
 ### Features
@@ -25,15 +25,15 @@
 
 
 
-## [1.2.2](https://github.com/stackblitz/tutorialkit/compare/1.2.1...1.2.2) "@tutorialkit/types" (2024-11-12)
+## [1.2.2](https://github.com/stackblitz/tutorialkit/compare/1.2.1...1.2.2) "@szelenov/tutorialkit-types" (2024-11-12)
 
 
 
-## [1.2.1](https://github.com/stackblitz/tutorialkit/compare/1.2.0...1.2.1) "@tutorialkit/types" (2024-11-05)
+## [1.2.1](https://github.com/stackblitz/tutorialkit/compare/1.2.0...1.2.1) "@szelenov/tutorialkit-types" (2024-11-05)
 
 
 
-# [1.2.0](https://github.com/stackblitz/tutorialkit/compare/1.1.1...1.2.0) "@tutorialkit/types" (2024-11-05)
+# [1.2.0](https://github.com/stackblitz/tutorialkit/compare/1.1.1...1.2.0) "@szelenov/tutorialkit-types" (2024-11-05)
 
 
 ### Features
@@ -42,11 +42,11 @@
 
 
 
-## [1.1.1](https://github.com/stackblitz/tutorialkit/compare/1.1.0...1.1.1) "@tutorialkit/types" (2024-10-20)
+## [1.1.1](https://github.com/stackblitz/tutorialkit/compare/1.1.0...1.1.1) "@szelenov/tutorialkit-types" (2024-10-20)
 
 
 
-# [1.1.0](https://github.com/stackblitz/tutorialkit/compare/1.0.0...1.1.0) "@tutorialkit/types" (2024-10-18)
+# [1.1.0](https://github.com/stackblitz/tutorialkit/compare/1.0.0...1.1.0) "@szelenov/tutorialkit-types" (2024-10-18)
 
 
 ### Features
@@ -55,7 +55,7 @@
 
 
 
-# [1.0.0](https://github.com/stackblitz/tutorialkit/compare/0.2.3...1.0.0) "@tutorialkit/types" (2024-10-01)
+# [1.0.0](https://github.com/stackblitz/tutorialkit/compare/0.2.3...1.0.0) "@szelenov/tutorialkit-types" (2024-10-01)
 
 
 ### Bug Fixes
@@ -72,11 +72,11 @@
 
 
 
-## [0.2.3](https://github.com/stackblitz/tutorialkit/compare/0.2.2...0.2.3) "@tutorialkit/types" (2024-09-10)
+## [0.2.3](https://github.com/stackblitz/tutorialkit/compare/0.2.2...0.2.3) "@szelenov/tutorialkit-types" (2024-09-10)
 
 
 
-## [0.2.2](https://github.com/stackblitz/tutorialkit/compare/0.2.1...0.2.2) "@tutorialkit/types" (2024-09-04)
+## [0.2.2](https://github.com/stackblitz/tutorialkit/compare/0.2.1...0.2.2) "@szelenov/tutorialkit-types" (2024-09-04)
 
 
 ### Features
@@ -85,15 +85,15 @@
 
 
 
-## [0.2.1](https://github.com/stackblitz/tutorialkit/compare/0.2.0...0.2.1) "@tutorialkit/types" (2024-08-30)
+## [0.2.1](https://github.com/stackblitz/tutorialkit/compare/0.2.0...0.2.1) "@szelenov/tutorialkit-types" (2024-08-30)
 
 
 
-# [0.2.0](https://github.com/stackblitz/tutorialkit/compare/0.1.6...0.2.0) "@tutorialkit/types" (2024-08-28)
+# [0.2.0](https://github.com/stackblitz/tutorialkit/compare/0.1.6...0.2.0) "@szelenov/tutorialkit-types" (2024-08-28)
 
 
 
-## [0.1.6](https://github.com/stackblitz/tutorialkit/compare/0.1.5...0.1.6) "@tutorialkit/types" (2024-08-26)
+## [0.1.6](https://github.com/stackblitz/tutorialkit/compare/0.1.5...0.1.6) "@szelenov/tutorialkit-types" (2024-08-26)
 
 
 ### Bug Fixes
@@ -107,7 +107,7 @@
 
 
 
-## [0.1.5](https://github.com/stackblitz/tutorialkit/compare/0.1.4...0.1.5) "@tutorialkit/types" (2024-08-16)
+## [0.1.5](https://github.com/stackblitz/tutorialkit/compare/0.1.4...0.1.5) "@szelenov/tutorialkit-types" (2024-08-16)
 
 
 ### Features
@@ -116,7 +116,7 @@
 
 
 
-## [0.1.4](https://github.com/stackblitz/tutorialkit/compare/0.1.3...0.1.4) "@tutorialkit/types" (2024-08-08)
+## [0.1.4](https://github.com/stackblitz/tutorialkit/compare/0.1.3...0.1.4) "@szelenov/tutorialkit-types" (2024-08-08)
 
 
 ### Bug Fixes
@@ -125,7 +125,7 @@
 
 
 
-## [0.1.3](https://github.com/stackblitz/tutorialkit/compare/0.1.2...0.1.3) "@tutorialkit/types" (2024-08-07)
+## [0.1.3](https://github.com/stackblitz/tutorialkit/compare/0.1.2...0.1.3) "@szelenov/tutorialkit-types" (2024-08-07)
 
 
 ### Features
@@ -135,15 +135,15 @@
 
 
 
-## [0.1.2](https://github.com/stackblitz/tutorialkit/compare/0.1.1...0.1.2) "@tutorialkit/types" (2024-08-01)
+## [0.1.2](https://github.com/stackblitz/tutorialkit/compare/0.1.1...0.1.2) "@szelenov/tutorialkit-types" (2024-08-01)
 
 
 
-## [0.1.1](https://github.com/stackblitz/tutorialkit/compare/0.1.0...0.1.1) "@tutorialkit/types" (2024-07-30)
+## [0.1.1](https://github.com/stackblitz/tutorialkit/compare/0.1.0...0.1.1) "@szelenov/tutorialkit-types" (2024-07-30)
 
 
 
-# [0.1.0](https://github.com/stackblitz/tutorialkit/compare/0.0.3...0.1.0) "@tutorialkit/types" (2024-07-25)
+# [0.1.0](https://github.com/stackblitz/tutorialkit/compare/0.0.3...0.1.0) "@szelenov/tutorialkit-types" (2024-07-25)
 
 
 ### Features
@@ -153,19 +153,19 @@
 
 
 
-## [0.0.3](https://github.com/stackblitz/tutorialkit/compare/0.0.2...0.0.3) "@tutorialkit/types" (2024-07-23)
+## [0.0.3](https://github.com/stackblitz/tutorialkit/compare/0.0.2...0.0.3) "@szelenov/tutorialkit-types" (2024-07-23)
 
 
 
-## [0.0.2](https://github.com/stackblitz/tutorialkit/compare/0.0.1...0.0.2) "@tutorialkit/types" (2024-07-17)
+## [0.0.2](https://github.com/stackblitz/tutorialkit/compare/0.0.1...0.0.2) "@szelenov/tutorialkit-types" (2024-07-17)
 
 
 
-## [0.0.1](https://github.com/stackblitz/tutorialkit/compare/0.0.1-alpha.26...0.0.1) "@tutorialkit/types" (2024-07-17)
+## [0.0.1](https://github.com/stackblitz/tutorialkit/compare/0.0.1-alpha.26...0.0.1) "@szelenov/tutorialkit-types" (2024-07-17)
 
 
 
-## [0.0.1-alpha.26](https://github.com/stackblitz/tutorialkit/compare/0.0.1-alpha.25...0.0.1-alpha.26) "@tutorialkit/types" (2024-07-15)
+## [0.0.1-alpha.26](https://github.com/stackblitz/tutorialkit/compare/0.0.1-alpha.25...0.0.1-alpha.26) "@szelenov/tutorialkit-types" (2024-07-15)
 
 
 ### Bug Fixes
@@ -180,16 +180,16 @@
 
 
 
-## [0.0.1-alpha.25](https://github.com/stackblitz/tutorialkit/compare/0.0.1-alpha.24...0.0.1-alpha.25) "@tutorialkit/types" (2024-07-09)
+## [0.0.1-alpha.25](https://github.com/stackblitz/tutorialkit/compare/0.0.1-alpha.24...0.0.1-alpha.25) "@szelenov/tutorialkit-types" (2024-07-09)
 
 
 
-## [0.0.1-alpha.24](https://github.com/stackblitz/tutorialkit/compare/0.0.1-alpha.23...0.0.1-alpha.24) "@tutorialkit/types" (2024-07-04)
+## [0.0.1-alpha.24](https://github.com/stackblitz/tutorialkit/compare/0.0.1-alpha.23...0.0.1-alpha.24) "@szelenov/tutorialkit-types" (2024-07-04)
 
 
 ### Features
 
-* add `@tutorialkit/theme` package to use the theme without astro ([#105](https://github.com/stackblitz/tutorialkit/issues/105)) ([9805996](https://github.com/stackblitz/tutorialkit/commit/9805996a4211a1c8a3e1bfbbd958a27f1957d4d7))
+* add `@szelenov/tutorialkit-theme` package to use the theme without astro ([#105](https://github.com/stackblitz/tutorialkit/issues/105)) ([9805996](https://github.com/stackblitz/tutorialkit/commit/9805996a4211a1c8a3e1bfbbd958a27f1957d4d7))
 * allow ordering to be config based in addition to folder based ([#79](https://github.com/stackblitz/tutorialkit/issues/79)) ([2b131e5](https://github.com/stackblitz/tutorialkit/commit/2b131e597b94671678c2f2e4625e194eb382dab0))
 * make the logo link configurable ([#68](https://github.com/stackblitz/tutorialkit/issues/68)) ([2da64ae](https://github.com/stackblitz/tutorialkit/commit/2da64ae811cbb12aeab8fd1fb36bed4845542aa4))
 * **terminal:** add support for redirects and allow specific commands ([#76](https://github.com/stackblitz/tutorialkit/issues/76)) ([eca5f22](https://github.com/stackblitz/tutorialkit/commit/eca5f22e3120c4d59349f416322b990d37cb0c15))

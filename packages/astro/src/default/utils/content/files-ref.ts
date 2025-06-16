@@ -1,6 +1,6 @@
 import path from 'node:path';
-import type { FilesRefList } from '@tutorialkit/types';
-import { folderPathToFilesRef } from '@tutorialkit/types';
+import type { FilesRefList } from '@szelenov/tutorialkit-types';
+import { folderPathToFilesRef } from '@szelenov/tutorialkit-types';
 import glob from 'fast-glob';
 import { IGNORED_FILES } from '../constants';
 

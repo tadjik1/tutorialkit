@@ -1,7 +1,7 @@
 /* eslint-disable @blitz/lines-around-comment */
 
 declare module 'tutorialkit:store' {
-  const tutorialStore: import('@tutorialkit/runtime').TutorialStore;
+  const tutorialStore: import('@szelenov/tutorialkit-runtime').TutorialStore;
 
   export default tutorialStore;
 }
