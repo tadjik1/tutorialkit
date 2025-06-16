@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://tutorialkit.dev/"><strong>tutorialkit.dev</strong></a>
+  <a href="https://javascript.info/"><strong>Javascript.info</strong></a>
   <br>
 </p>
 
