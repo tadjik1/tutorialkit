@@ -3,6 +3,7 @@ import { webcontainerSchema } from './common.js';
 
 export const tutorialSchema = webcontainerSchema.extend({
   type: z.literal('tutorial'),
+  id: z.string().optional(),
   logoLink: z.string().optional(),
   parts: z
     .array(z.string())
@@ -15,6 +16,12 @@ export const tutorialSchema = webcontainerSchema.extend({
     .optional()
     .describe(
       'The list of lessons in this tutorial. The order of this array defines the order of the lessons. If not specified a folder-based numbering system is used instead.',
+    ),
+  tasks: z
+    .array(z.string())
+    .optional()
+    .describe(
+      'The list of tasks in this tutorial. The order of this array defines the order of the lessons. If not specified a folder-based numbering system is used instead.',
     ),
 });
 

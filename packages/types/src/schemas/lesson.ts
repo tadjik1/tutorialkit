@@ -2,7 +2,7 @@ import { z } from 'zod';
 import { baseSchema } from './common.js';
 
 export const lessonSchema = baseSchema.extend({
-  type: z.literal('lesson'),
+  type: z.enum(['lesson', 'task']),
   scope: z.string().optional().describe('A prefix that all file paths must match to be visible in the file tree.'),
   hideRoot: z
     .boolean()

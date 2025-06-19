@@ -1,5 +1,6 @@
 ---
 type: tutorial
+id: nodejs-basics
 
 focus: /index.js
 editor:

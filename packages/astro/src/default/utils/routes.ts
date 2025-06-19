@@ -22,6 +22,7 @@ export async function generateStaticRoutes() {
         slug: `/${slug}`,
       },
       props: {
+        tutorialId: tutorial.id,
         title,
         lesson: lesson as Lesson<AstroComponentFactory>,
         logoLink: tutorial.logoLink,

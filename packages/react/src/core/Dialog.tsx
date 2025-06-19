@@ -29,7 +29,12 @@ export default function Dialog({ title, confirmText, onClose, children }: Props)
       <RadixDialog.Portal>
         <RadixDialog.Overlay className="fixed z-11 inset-0 opacity-50 bg-black" />
 
-        <RadixDialog.Content className="fixed z-11 top-50% left-50% transform-translate--50% w-90vw max-w-450px max-h-85vh rounded-xl text-tk-text-primary bg-tk-background-primary">
+        <RadixDialog.Content
+          onPointerDownOutside={(e) => e.preventDefault()}
+          onInteractOutside={(e) => e.preventDefault()}
+          onEscapeKeyDown={(e) => e.preventDefault()}
+          className="fixed z-11 top-50% left-50% transform-translate--50% w-90vw max-w-450px max-h-85vh rounded-xl text-tk-text-primary bg-tk-background-primary"
+        >
           <div className="relative p-10">
             <RadixDialog.Title className="text-6">{title}</RadixDialog.Title>
 

@@ -37,6 +37,7 @@ export interface Chapter {
 
 export interface Lesson<T = unknown> {
   id: string;
+  type: 'lesson' | 'task';
   order: number;
   data: LessonSchema;
   part?: { id: Part['id']; title: string };
@@ -61,6 +62,14 @@ export type CustomConfig = CustomSchema;
 
 export interface Tutorial {
   logoLink?: string;
+  id?: string;
   parts: Record<Part['id'], Part>;
   lessons: Lesson[];
+}
+
+export interface User {
+  displayName: string;
+  profileName: string;
+  photo: string;
+  solved: string[];
 }

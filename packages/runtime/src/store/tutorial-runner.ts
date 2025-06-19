@@ -438,41 +438,36 @@ export class TutorialRunner {
     return { files };
   }
 
-  async runTests() {
-    const task = newTask<{ exitCode: number; output: string }>(
-      async (signal) => {
-        const webcontainer = await this._webcontainer;
-
-        signal.throwIfAborted();
-
-        const process = await webcontainer.spawn('npm', ['test']);
-        const output: string[] = [];
-        process.output.pipeTo(
-          new WritableStream({
-            write(data) {
-              output.push(data);
-            },
-          }),
-        );
-        const exitCode = await process.exit;
-        return { exitCode, output: output.join() };
-      },
-      { ignoreCancel: true },
-    );
-
-    return task.promise;
+  async runTests(signal: AbortSignal) {
+    const webcontainer = await this._webcontainer;
+    const tests = await webcontainer.spawn('npm', ['test']);
+    const abortListener = () => tests.kill();
+    signal.addEventListener('abort', abortListener, { once: true });
+    const exitCode = await tests.exit;
+    signal.removeEventListener('abort', abortListener);
+    return exitCode === 0;
   }
 
-  async submitSolution(course: string, lesson: string) {
-    const response = await fetch('/tutorial/submit', {
-      method: 'POST',
-      body: JSON.stringify({
-        course,
-        lesson,
-      }),
+  async submitSolution(courseId: string, taskId: string, signal: AbortSignal) {
+    if (import.meta.env.PROD) {
+      const response = await fetch('/tutorials/submit', {
+        method: 'POST',
+        body: JSON.stringify({
+          courseId,
+          taskId,
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        signal,
+      });
+      return response.ok;
+    }
+    // dev mode
+    const result = await new Promise((resolve) => {
+      setTimeout(resolve, 700, true);
     });
-
-    return response.ok;
+    return result;
   }
 
   private async _runCommands(webcontainer: WebContainer, commands: Commands, signal: AbortSignal) {

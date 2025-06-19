@@ -7,8 +7,8 @@ import type {
   Part,
   PartSchema,
   Tutorial,
-  TutorialSchema,
-} from '@szelenov/tutorialkit-types';
+  TutorialSchema
+} from "@szelenov/tutorialkit-types";
 import { interpolateString, DEFAULT_LOCALIZATION } from '@szelenov/tutorialkit-types';
 import { getCollection } from 'astro:content';
 import { getFilesRefList } from './content/files-ref';
@@ -160,10 +160,9 @@ async function parseCollection(collection: CollectionEntryTutorial[]) {
       // default template if not specified
       tutorialMetaData.template ??= 'default';
       tutorialMetaData.i18n = Object.assign({ ...DEFAULT_LOCALIZATION }, tutorialMetaData.i18n);
-      tutorialMetaData.openInStackBlitz ??= true;
-      tutorialMetaData.downloadAsZip ??= false;
 
       tutorial.logoLink = data.logoLink;
+      tutorial.id = data.id;
     } else if (type === 'part') {
       if (!partId) {
         throw new Error('Part missing id');
@@ -191,7 +190,7 @@ async function parseCollection(collection: CollectionEntryTutorial[]) {
         data,
         slug: getSlug(entry),
       };
-    } else if (type === 'lesson') {
+    } else if (type === 'lesson' || type === 'task') {
       if (!lessonId) {
         throw new Error('Lesson missing id');
       }
@@ -208,6 +207,7 @@ async function parseCollection(collection: CollectionEntryTutorial[]) {
       const lesson: Lesson = {
         data,
         id: lessonId,
+        type: type,
         filepath: id,
         order: -1,
         Markdown: Content,
@@ -299,7 +299,7 @@ function getSlug(entry: CollectionEntryTutorial) {
 function resolveIds(
   id: string,
   type: CollectionEntryTutorial['data']['type'],
-): { partId?: string; chapterId?: string; lessonId?: string } {
+): { partId?: string; chapterId?: string; lessonId?: string; } {
   const parts = id.split('/');
 
   if (type === 'tutorial') {
@@ -346,6 +346,10 @@ function resolveIds(
 }
 
 function assertTutorialStructure(tutorial: Tutorial) {
+  if (!tutorial.id) {
+    throw new Error('Tutorial id must be set in meta.md file.');
+  }
+
   // verify that parts and lessons are not mixed in tutorial
   if (Object.keys(tutorial.parts).length !== 0 && tutorial.lessons.some((lesson) => !lesson.part)) {
     throw new Error(

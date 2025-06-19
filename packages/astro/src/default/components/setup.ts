@@ -8,12 +8,13 @@ const devUser = {
   displayName: 'John Doe',
   profileName: 'john-doe',
   photo: 'https://avatars0.githubusercontent.com/u/1452895?v=4',
+  solved: [],
 };
 
 export async function checkUserAuth() {
   try {
     if (import.meta.env.PROD) {
-      const res = await fetch('/profile/me', {
+      const res = await fetch('/profile/me?include_enrollments=true', {
         credentials: 'include',
       });
       if (!res.ok) throw new Error('unauthorized');

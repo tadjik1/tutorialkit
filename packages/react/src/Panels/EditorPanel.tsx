@@ -1,6 +1,11 @@
-import type { I18n } from '@szelenov/tutorialkit-types';
+import type { I18n, Lesson } from '@szelenov/tutorialkit-types';
 import { useEffect, useRef, type ComponentProps } from 'react';
-import { Panel, PanelGroup, PanelResizeHandle, type ImperativePanelHandle } from 'react-resizable-panels';
+import {
+  Panel,
+  PanelGroup,
+  PanelResizeHandle,
+  type ImperativePanelHandle,
+} from 'react-resizable-panels';
 import {
   CodeMirrorEditor,
   type EditorDocument,
@@ -27,7 +32,8 @@ interface Props {
   allowEditPatterns?: ComponentProps<typeof FileTree>['allowEditPatterns'];
   onEditorChange?: OnEditorChange;
   onEditorScroll?: OnEditorScroll;
-  onRunTestsClick?: () => void;
+  contentType: Lesson['type'];
+  isTaskSolved: boolean;
   onSubmitClick?: () => void;
   onFileSelect?: (value?: string) => void;
   onFileTreeChange?: ComponentProps<typeof FileTree>['onFileChange'];
@@ -44,7 +50,8 @@ export function EditorPanel({
   editorDocument,
   selectedFile,
   allowEditPatterns,
-  onRunTestsClick,
+  contentType,
+  isTaskSolved,
   onSubmitClick,
   onEditorChange,
   onEditorScroll,
@@ -71,7 +78,13 @@ export function EditorPanel({
 
   return (
     <PanelGroup className="bg-tk-elements-panel-backgroundColor" direction="horizontal">
-      <Panel className="flex flex-col" collapsible defaultSize={0} minSize={10} ref={fileTreePanelRef}>
+      <Panel
+        className="flex flex-col"
+        collapsible
+        defaultSize={0}
+        minSize={10}
+        ref={fileTreePanelRef}
+      >
         <div className="panel-header border-r border-b border-tk-elements-app-borderColor">
           <div className="panel-title">
             <div className="panel-icon i-ph-tree-structure-duotone shrink-0"></div>
@@ -99,8 +112,9 @@ export function EditorPanel({
         <FileTab
           i18n={i18n}
           editorDocument={editorDocument}
-          onRunTestsClick={onRunTestsClick}
+          contentType={contentType}
           onSubmitClick={onSubmitClick}
+          isTaskSolved={isTaskSolved}
         />
         <div className="h-full flex-1 overflow-hidden">
           <CodeMirrorEditor
@@ -121,11 +135,12 @@ export function EditorPanel({
 interface FileTabProps {
   i18n: I18n;
   editorDocument: EditorDocument | undefined;
-  onRunTestsClick?: () => void;
+  contentType: Lesson['type'];
   onSubmitClick?: () => void;
+  isTaskSolved: boolean;
 }
 
-function FileTab({ i18n, editorDocument, onRunTestsClick, onSubmitClick }: FileTabProps) {
+function FileTab({ i18n, editorDocument, contentType, onSubmitClick, isTaskSolved }: FileTabProps) {
   const filePath = editorDocument?.filePath;
   const fileName = filePath?.split('/').at(-1) ?? '';
   const icon = fileName ? getFileIcon(fileName) : '';
@@ -137,14 +152,22 @@ function FileTab({ i18n, editorDocument, onRunTestsClick, onSubmitClick }: FileT
         <span className="text-sm">{fileName}</span>
       </div>
       <div className="flex">
-        <button onClick={onRunTestsClick} className="panel-button px-2 py-0.5 mr-1 -my-1">
-          <div className="i-ph-play-circle-duotone text-lg" />
-          Check solution
-        </button>
-        <button onClick={onSubmitClick} disabled={false} className="panel-button px-2 py-0.5 -my-1">
-          <div className="i-ph-box-arrow-up-duotone text-lg" />
-          Submit
-        </button>
+        {contentType === 'task' && !isTaskSolved && (
+          <button
+            onClick={onSubmitClick}
+            disabled={false}
+            className="panel-button px-2 py-0.5 -my-1"
+          >
+            <div className="i-ph-box-arrow-up-duotone text-blue-600 text-lg" />
+            Submit
+          </button>
+        )}
+        {contentType === 'task' && isTaskSolved && (
+          <span className="panel-button px-2 py-0.5 -my-1">
+            <div className="i-ph-check-circle-duotone text-green-600 text-lg" />
+            Solved
+          </span>
+        )}
       </div>
     </div>
   );

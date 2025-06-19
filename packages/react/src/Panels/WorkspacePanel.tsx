@@ -1,24 +1,33 @@
 import { useStore } from '@nanostores/react';
 import type { TutorialStore } from '@szelenov/tutorialkit-runtime';
-import type { I18n } from '@szelenov/tutorialkit-types';
+import type { I18n, User } from '@szelenov/tutorialkit-types';
 import { useCallback, useEffect, useRef, useState, type ComponentProps } from 'react';
-import { Panel, PanelGroup, PanelResizeHandle, type ImperativePanelHandle } from 'react-resizable-panels';
-import { DialogProvider } from '../core/Dialog.js';
+import {
+  Panel,
+  PanelGroup,
+  PanelResizeHandle,
+  type ImperativePanelHandle,
+} from 'react-resizable-panels';
+import Dialog, { DialogProvider } from '../core/Dialog.js';
 import type { Theme } from '../core/types.js';
 import resizePanelStyles from '../styles/resize-panel.module.css';
 import { classNames } from '../utils/classnames.js';
 import { EditorPanel } from './EditorPanel.js';
 import { PreviewPanel, type ImperativePreviewHandle } from './PreviewPanel.js';
 import { TerminalPanel } from './TerminalPanel.js';
+import { SubmitDialog } from '../core/SubmitStep.js';
 
 const DEFAULT_TERMINAL_SIZE = 25;
 
-type FileTreeChangeEvent = Parameters<NonNullable<ComponentProps<typeof EditorPanel>['onFileTreeChange']>>[0];
+type FileTreeChangeEvent = Parameters<
+  NonNullable<ComponentProps<typeof EditorPanel>['onFileTreeChange']>
+>[0];
 
 interface Props {
   tutorialStore: TutorialStore;
   theme: Theme;
   dialog: NonNullable<ComponentProps<typeof DialogProvider>['value']>;
+  user: User;
 }
 
 interface PanelProps extends Omit<Props, 'dialog'> {
@@ -35,7 +44,7 @@ interface TerminalProps extends PanelProps {
 /**
  * This component is the orchestrator between various interactive components.
  */
-export function WorkspacePanel({ tutorialStore, theme, dialog }: Props) {
+export function WorkspacePanel({ tutorialStore, theme, dialog, user }: Props) {
   /**
    * Re-render when lesson changes.
    * The `tutorialStore.hasEditor()` and other methods below access
@@ -51,9 +60,14 @@ export function WorkspacePanel({ tutorialStore, theme, dialog }: Props) {
   const terminalExpanded = useRef(false);
 
   return (
-    <PanelGroup className={resizePanelStyles.PanelGroup} id="right-panel-group" direction="vertical">
+    <PanelGroup
+      className={resizePanelStyles.PanelGroup}
+      id="right-panel-group"
+      direction="vertical"
+    >
       <DialogProvider value={dialog}>
         <EditorSection
+          user={user}
           theme={theme}
           tutorialStore={tutorialStore}
           hasEditor={hasEditor}
@@ -69,6 +83,7 @@ export function WorkspacePanel({ tutorialStore, theme, dialog }: Props) {
       />
 
       <PreviewsSection
+        user={user}
         theme={theme}
         tutorialStore={tutorialStore}
         terminalPanelRef={terminalPanelRef}
@@ -85,6 +100,7 @@ export function WorkspacePanel({ tutorialStore, theme, dialog }: Props) {
       />
 
       <TerminalSection
+        user={user}
         tutorialStore={tutorialStore}
         theme={theme}
         terminalPanelRef={terminalPanelRef}
@@ -97,7 +113,7 @@ export function WorkspacePanel({ tutorialStore, theme, dialog }: Props) {
   );
 }
 
-function EditorSection({ theme, tutorialStore, hasEditor }: PanelProps) {
+function EditorSection({ theme, tutorialStore, hasEditor, user }: PanelProps) {
   const selectedFile = useStore(tutorialStore.selectedFile);
   const currentDocument = useStore(tutorialStore.currentDocument);
   const lessonFullyLoaded = useStore(tutorialStore.lessonFullyLoaded);
@@ -105,7 +121,20 @@ function EditorSection({ theme, tutorialStore, hasEditor }: PanelProps) {
   const storeRef = useStore(tutorialStore.ref);
   const files = useStore(tutorialStore.files);
 
+  // submitting logic
+  const [submitting, setSubmitting] = useState(false);
+  const [submittingStep, setSubmittingStep] = useState<1 | 2 | 3>(1);
+  const [submittingError, setSubmittingError] = useState(false);
+  const abortControllerRef = useRef<AbortController | null>(null);
+
   const lesson = tutorialStore.lesson!;
+  // construct full lesson id based on optional part & chart
+  let lessonId = '';
+  if (lesson.part) lessonId += `/${lesson.part.id}`;
+  if (lesson.chapter) lessonId += `/${lesson.chapter.id}`;
+  lessonId += `/${lesson.id}`;
+
+  const isTaskSolved = (user?.solved || []).some((id) => id === lessonId);
 
   async function onFileTreeChange({ method, type, value }: FileTreeChangeEvent) {
     if (method === 'add' && type === 'file') {
@@ -117,14 +146,44 @@ function EditorSection({ theme, tutorialStore, hasEditor }: PanelProps) {
     }
   }
 
-  async function onRunTestsClick() {
-    console.log('run tests');
-    const result = await tutorialStore.runTests();
-    console.log(result);
+  async function onSubmitClick() {
+    setSubmitting(true);
+    setSubmittingStep(1);
+    setSubmittingError(false);
+    abortControllerRef.current = new AbortController();
+    try {
+      const testsSuccessful = await tutorialStore.runTests(abortControllerRef.current.signal);
+      if (!testsSuccessful) {
+        setSubmittingError(true);
+        return;
+      }
+      setSubmittingStep(2);
+      const submittingSuccessful = await tutorialStore.submitSolution(
+        lessonId,
+        abortControllerRef.current.signal,
+      );
+      if (!submittingSuccessful) {
+        setSubmittingError(true);
+        return;
+      }
+      setSubmittingStep(3);
+    } catch (error) {
+      console.log(error);
+      setSubmittingError(true);
+    }
   }
 
-  async function onSubmitClick() {
-    console.log('submit');
+  function onCloseSubmitting() {
+    if (submittingStep === 3) {
+      if (lesson.next) {
+        window.location.href = lesson.next.href;
+        return;
+      } else {
+        // show some final congrats page?
+      }
+    }
+    abortControllerRef.current?.abort();
+    setSubmitting(false);
   }
 
   return (
@@ -144,8 +203,9 @@ function EditorSection({ theme, tutorialStore, hasEditor }: PanelProps) {
         files={files}
         i18n={lesson.data.i18n as I18n}
         hideRoot={lesson.data.hideRoot}
+        contentType={lesson.type}
+        isTaskSolved={isTaskSolved}
         onSubmitClick={onSubmitClick}
-        onRunTestsClick={onRunTestsClick}
         onFileSelect={(filePath) => tutorialStore.setSelectedFile(filePath)}
         onFileTreeChange={onFileTreeChange}
         allowEditPatterns={editorConfig.fileTree.allowEdits || undefined}
@@ -153,6 +213,14 @@ function EditorSection({ theme, tutorialStore, hasEditor }: PanelProps) {
         onEditorScroll={(position) => tutorialStore.setCurrentDocumentScrollPosition(position)}
         onEditorChange={(update) => tutorialStore.setCurrentDocumentContent(update.content)}
       />
+
+      {submitting && (
+        <SubmitDialog
+          currentStep={submittingStep}
+          submittingError={submittingError}
+          onClose={onCloseSubmitting}
+        />
+      )}
     </Panel>
   );
 }
@@ -224,7 +292,9 @@ function PreviewsSection({
   const [panelMinSize, setPanelMinSize] = useState(10);
 
   useEffect(() => {
-    const panelGroup = document.querySelector('div[data-panel-group-id="right-panel-group"]' as 'div');
+    const panelGroup = document.querySelector(
+      'div[data-panel-group-id="right-panel-group"]' as 'div',
+    );
 
     if (!panelGroup) {
       return;
@@ -302,9 +372,12 @@ function TerminalSection({
       onExpand={() => {
         terminalExpanded.current = true;
       }}
-      className={classNames('transition-theme bg-tk-elements-panel-backgroundColor text-tk-elements-panel-textColor', {
-        'border-t border-tk-elements-app-borderColor': hasPreviews,
-      })}
+      className={classNames(
+        'transition-theme bg-tk-elements-panel-backgroundColor text-tk-elements-panel-textColor',
+        {
+          'border-t border-tk-elements-app-borderColor': hasPreviews,
+        },
+      )}
     >
       <TerminalPanel tutorialStore={tutorialStore} theme={theme} />
     </Panel>

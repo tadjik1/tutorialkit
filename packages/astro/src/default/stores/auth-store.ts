@@ -1,10 +1,5 @@
 import { atom } from 'nanostores';
-
-interface User {
-  displayName: string;
-  profileName: string;
-  photo: string;
-}
+import type { User } from '@szelenov/tutorialkit-types';
 
 type AuthStore = { user?: User };
 

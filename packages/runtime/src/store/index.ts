@@ -38,6 +38,8 @@ export class TutorialStore {
   private _ref = atom(1);
   private _themeRef = atom(1);
 
+  private _tutorialId: string | undefined;
+
   private _lessonFiles: Files | undefined;
   private _lessonSolution: Files | undefined;
   private _lessonTemplate: Files | undefined;
@@ -122,6 +124,10 @@ export class TutorialStore {
         }
       });
     }
+  }
+
+  setTutorialId(tutorialId: string) {
+    this._tutorialId = tutorialId;
   }
 
   /** @internal */
@@ -415,7 +421,13 @@ export class TutorialStore {
     return this._runner.takeSnapshot();
   }
 
-  async runTests() {
-    return this._runner.runTests();
+  runTests(signal: AbortSignal) {
+    return this._runner.runTests(signal);
+  }
+
+  submitSolution(taskId: string, signal: AbortSignal) {
+    if (!this._tutorialId)
+      throw new Error('No _tutorialId');
+    return this._runner.submitSolution(this._tutorialId, taskId, signal);
   }
 }
