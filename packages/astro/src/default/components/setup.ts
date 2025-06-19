@@ -14,7 +14,8 @@ const devUser = {
 export async function checkUserAuth() {
   try {
     if (import.meta.env.PROD) {
-      const res = await fetch('/profile/me?include_enrollments=true', {
+      const courseId = window.location.pathname.split('/').at(0);
+      const res = await fetch(`/profile/me?include_enrollments=true&course=${courseId}`, {
         credentials: 'include',
       });
       if (!res.ok) throw new Error('unauthorized');
