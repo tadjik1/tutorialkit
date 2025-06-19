@@ -69,7 +69,9 @@ export function ContextMenu({
     return children;
   }
 
-  async function onFileNameEnd(event: React.KeyboardEvent<HTMLInputElement> | React.FocusEvent<HTMLInputElement>) {
+  async function onFileNameEnd(
+    event: React.KeyboardEvent<HTMLInputElement> | React.FocusEvent<HTMLInputElement>,
+  ) {
     if (state !== 'add_file' && state !== 'add_folder') {
       return;
     }
@@ -126,8 +128,13 @@ export function ContextMenu({
       {position === 'before' && element}
 
       {state !== 'idle' && (
-        <div className="flex items-center gap-2 border-2 border-solid border-transparent" {...props}>
-          <div className={`scale-120 shrink-0 ${state === 'add_file' ? 'i-ph-file-duotone' : 'i-ph-folder-duotone'}`} />
+        <div
+          className="flex items-center gap-2 border-2 border-solid border-transparent"
+          {...props}
+        >
+          <div
+            className={`scale-120 shrink-0 ${state === 'add_file' ? 'i-ph-file-duotone' : 'i-ph-folder-duotone'}`}
+          />
           <input
             ref={inputRef}
             autoFocus
@@ -158,17 +165,23 @@ export function ContextMenu({
 
       {(state === 'add_failed_not_allowed' || state === 'add_failed_exists') && (
         <Dialog
-          title={i18n?.fileTreeActionNotAllowedText || DEFAULT_LOCALIZATION.fileTreeActionNotAllowedText}
+          title={
+            i18n?.fileTreeActionNotAllowedText || DEFAULT_LOCALIZATION.fileTreeActionNotAllowedText
+          }
           confirmText={i18n?.confirmationText || DEFAULT_LOCALIZATION.confirmationText}
           onClose={() => setState('idle')}
         >
           {state === 'add_failed_not_allowed' ? (
             <>
-              {i18n?.fileTreeAllowedPatternsText || DEFAULT_LOCALIZATION.fileTreeAllowedPatternsText}
+              {i18n?.fileTreeAllowedPatternsText ||
+                DEFAULT_LOCALIZATION.fileTreeAllowedPatternsText}
               <AllowPatternsList allowEditPatterns={allowEditPatterns} />
             </>
           ) : (
-            <>{i18n?.fileTreeFileExistsAlreadyText || DEFAULT_LOCALIZATION.fileTreeFileExistsAlreadyText}</>
+            <>
+              {i18n?.fileTreeFileExistsAlreadyText ||
+                DEFAULT_LOCALIZATION.fileTreeFileExistsAlreadyText}
+            </>
           )}
         </Dialog>
       )}

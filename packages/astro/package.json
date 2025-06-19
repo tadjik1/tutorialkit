@@ -1,10 +1,10 @@
 {
   "name": "@szelenov/tutorialkit-astro",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "TutorialKit integration for Astro (https://astro.build)",
   "author": "Sergey Zelenov",
   "type": "module",
-  "bugs": "https://github.com/stackblitz/tadjik1/issues",
+  "bugs": "https://github.com/tadjik1/tutorialkit/issues",
   "homepage": "https://github.com/tadjik1/tutorialkit",
   "license": "MIT",
   "repository": {

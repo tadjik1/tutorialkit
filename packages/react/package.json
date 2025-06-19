@@ -1,6 +1,6 @@
 {
   "name": "@szelenov/tutorialkit-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "TutorialKit's React components and utilities",
   "author": "Sergey Zelenov",
   "type": "module",

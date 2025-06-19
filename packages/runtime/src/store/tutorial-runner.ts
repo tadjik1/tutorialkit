@@ -239,7 +239,12 @@ export class TutorialRunner {
    *
    * @see {LoadFilesOptions}
    */
-  prepareFiles({ files, template, signal, abortPreviousLoad = true }: LoadFilesOptions): Promise<void | TaskCancelled> {
+  prepareFiles({
+    files,
+    template,
+    signal,
+    abortPreviousLoad = true,
+  }: LoadFilesOptions): Promise<void | TaskCancelled> {
     const previousLoadPromise = this._currentLoadTask?.promise;
 
     if (abortPreviousLoad) {
@@ -424,7 +429,9 @@ export class TutorialRunner {
       // add start commands when missing
       if (packageJson && !packageJson.stackblitz?.startCommand) {
         const mainCommand = this._currentRunCommands?.mainCommand?.shellCommand;
-        const prepareCommands = (this._currentRunCommands?.prepareCommands || []).map((c) => c.shellCommand);
+        const prepareCommands = (this._currentRunCommands?.prepareCommands || []).map(
+          (c) => c.shellCommand,
+        );
         const startCommand = [...prepareCommands, mainCommand].filter(Boolean).join(' && ');
 
         files[this._packageJsonPath.slice(1)] = JSON.stringify(
@@ -512,7 +519,11 @@ export class TutorialRunner {
 
         runnableCommands++;
 
-        this._currentCommandProcess = await this._newProcess(webcontainer, output, command.shellCommand);
+        this._currentCommandProcess = await this._newProcess(
+          webcontainer,
+          output,
+          command.shellCommand,
+        );
 
         try {
           signal.throwIfAborted();
@@ -576,7 +587,11 @@ export class TutorialRunner {
     }
   }
 
-  private async _newProcess(webcontainer: WebContainer, output: ITerminal | undefined, shellCommand: string) {
+  private async _newProcess(
+    webcontainer: WebContainer,
+    output: ITerminal | undefined,
+    shellCommand: string,
+  ) {
     const [command, ...args] = shellCommand.split(' ');
 
     output?.write(`${escapeCodes.magenta('❯')} ${escapeCodes.green(command)} ${args.join(' ')}\n`);
@@ -653,7 +668,9 @@ export class TutorialRunner {
       Promise.all(
         files.map(async ([filePath, encoding]) => {
           // casts could be removed with an `if` but it feels weird
-          const content = (await webcontainer.fs.readFile(filePath, encoding as any)) as Uint8Array | string;
+          const content = (await webcontainer.fs.readFile(filePath, encoding as any)) as
+            | Uint8Array
+            | string;
 
           return [filePath, content] as const;
         }),

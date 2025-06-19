@@ -166,9 +166,6 @@ wowee plain text!
 npm i vocs
 ```
 
-```file:/package-lock.json showLineNumbers {2,3,6-9} collapse={2-3}
-```
-
 ```solution:/src/index.js showLineNumbers "+" title="Solution"
 ```
 
