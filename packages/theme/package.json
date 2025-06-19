@@ -1,6 +1,6 @@
 {
   "name": "@szelenov/tutorialkit-theme",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "TutorialKit theme configuration",
   "author": "Sergey Zelenov",
   "type": "module",
